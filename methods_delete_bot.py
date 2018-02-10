@@ -17,8 +17,8 @@ index = 0
 order = 1
 
 
-verif_token = 'WUIdVlRRxvlg5r6NFhj19i5e'
-SLACK_TOKEN = 'xoxp-203970479943-203138037490-292397923959-4a45f022f9a9242002c12221985a9a90'
+verif_token = 'XXXXXXXXXXXXX'
+SLACK_TOKEN = 'xoxp-XXXXXXXXXXXXXXXXXXXXXX'
 
 my_client = SlackClient(SLACK_TOKEN)
 
@@ -116,7 +116,7 @@ def response_to_invocation():
     global index, current_channel, count, order
     URL = "https://slack.com//api/chat.update"
     headers = {'Content-Type' : 'application/json;charset=utf-8',
-          'Authorization' : 'Bearer xoxp-203970479943-203138037490-292397923959-4a45f022f9a9242002c12221985a9a90'    }
+          'Authorization' : 'Bearer xoxp-XXXXXXXXXXXXXXXXXXX'    }
     init_data = request.data 
     data = request.form.to_dict()
     inner_data = data["payload"] 
@@ -280,7 +280,7 @@ def response_to_invocation():
 
         URL_delete = 'https://www.slack.com/api/files.delete'
         headers = {'Content-Type' : 'application/json;charset=utf-8',
-               'Authorization' : 'Bearer xoxp-203970479943-203138037490-292397923959-4a45f022f9a9242002c12221985a9a90'
+               'Authorization' : 'Bearer xoxp-XXXXXXXXXXXX'
     }
         json_data_delete = {
                      "file" : file   
@@ -371,85 +371,3 @@ def response_to_invocation():
 
         ##### send ephemeral message that file has been deleted ######
 
-# def response_to_invocation2():
-#   global file_list
-  
-#   if request.method == 'POST':
-#     init_data = request.data 
-#     print init_data
-#     data = request.form.to_dict()
-#     inner_data = data["payload"] 
-#     inner_data = json.loads(inner_data)
-#     print_json(inner_data["original_message"])
-#   response_url = inner_data['response_url']
-#   info = inner_data['trigger_id']
-#   print info 
-#   # checking this for security purposes
-#   token = inner_data['token']
-#   if token == verif_token:
-#   # the code below is only executed if the above is True.
-#     print "*** the tokens match ***"
-#     URL = 'https://www.slack.com/api/chat.update'
-#     ts = inner_data['message_ts']
-#     trigger_id = inner_data['trigger_id']
-#     returnChannel = inner_data['channel']['id']
-#     freshToken = 'Bearer xoxp-203970479943-203138037490-292397923959-4a45f022f9a9242002c12221985a9a90'
-#     headers = {'Content-Type' : 'application/json;charset=utf-8',
-#                'Authorization' : 'Bearer xoxp-203970479943-203138037490-292397923959-4a45f022f9a9242002c12221985a9a90'
-
-#     }
-#     text = file_list[int(count)]["id"]
-#     json_data = {
-#         "text": text,
-#         "ts" : ts,
-#         "channel" : returnChannel,
-#         "attachments": [
-#             {
-#                 "text": "Would you like to delete this file?",
-#                 "fallback": "You are unable to delete this file",
-#                 "callback_id": "wopr_game",
-#                 "color": "#ED0024",
-#                 "attachment_type": "default",
-#                 "actions": [
-#                     {
-#                         "name": "Prev",
-#                         "text": "Prev",
-#                         "type": "button",
-#                         "attachment_id": "1",
-#                         "value": "Prev"
-#                     },
-#                     {
-#                         "name": "next",
-#                         "text": "Next",
-#                         "type": "button",
-#                         "attachment_id": "2",
-#                         "value": "Next"
-#                     },
-#                     {
-#                         "name": "yes",
-#                         "text": "Yes",
-#                         "style": "danger",
-#                         "type": "button",
-#                         "attachment_id": "3",
-#                         "value": "Yes",
-#                         "confirm": {
-#                             "title": "Are you sure?",
-#                             "text": "Are you sure?",
-#                             "ok_text": "Yes",
-#                             "dismiss_text": "No"
-#                         }
-#                     }
-#                 ]
-#             }
-#         ]
-#     }
-#     #if file_list[1]['value'] == 
-#     #else:
-#     newResponse = requests.post(url=URL, headers=headers, json=json_data)  
-#     #print_json(json_data)
-#     #print count
-#     return Response(), 200  
-#   else:
-#     print "*** tokens did not match ***"
-#     return Response('auth did not work'), 200     
-#     
