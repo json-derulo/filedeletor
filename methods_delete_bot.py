@@ -39,7 +39,7 @@ def return_files():
     print "*** the tokens match ***"
     URL = "https://slack.com//api/chat.postMessage"
     headers = {'Content-Type' : 'application/json;charset=utf-8',
-          'Authorization' : 'Bearer xoxp-203970479943-203138037490-292397923959-4a45f022f9a9242002c12221985a9a90'    }
+          'Authorization' : 'Bearer xoxp-XXXXXXXXXXXXXX0'    }
     get_files= my_client.api_call(
                        'files.list',
                        )
