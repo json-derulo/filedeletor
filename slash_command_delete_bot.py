@@ -12,8 +12,8 @@ file_list = list()
 count = 0
 
 # The security token is used to verify that the request comes from Slack
-verif_token = 'WUIdVlRRxvlg5r6NFhj19i5e'
-SLACK_TOKEN = 'xoxp-203970479943-203138037490-292397923959-4a45f022f9a9242002c12221985a9a90'
+verif_token = 'XXXXXXXXXX'
+SLACK_TOKEN = 'xoxp-XXXXXXXXXXX'
 
 my_client = SlackClient(SLACK_TOKEN)
 
